@@ -1,0 +1,183 @@
+//===========================================================================
+//
+// DECORATE
+//
+//===========================================================================
+
+#include "actors/myactor.txt"
+
+Actor HellTree 14512 {
+  Radius 19
+  Height 61
+  Mass 5000
+  Scale 0.8
+  +SOLID
+  States {
+  Spawn:
+	TNT1 A 0
+	HETR A -1
+	wait
+  }
+}
+
+Actor SnowParticle 14500 //By Tormentor667
+{
+  +MISSILE 
+  +NoBlockMap 
+  +FORCEXYBILLBOARD
+  Radius 1
+  Height 1
+  Damage 0
+  Projectile
+  RenderStyle Translucent
+  Alpha 0.0
+  Scale 0.7
+  States
+  {
+  Spawn:
+    SNOW AAAAAAA 2 A_FadeIn(0.1)
+    SNOW A 3
+    goto Spawn+7
+  Death:
+    SNOW AAAAAA 1 A_FadeOut(0.2)
+    stop
+  }
+}
+
+Actor SnowSpawner 14501
+{
+ +NoBlockMap +NoGravity +NoSector +NoInteraction 
+ +NoClip -Solid +CLIENTSIDEONLY +SPAWNCEILING 
+ Radius 1
+ Height 1
+ States
+ {
+  Spawn:
+    TNT1 A 0
+    TNT1 A 0 A_JumpIf(Args[2] > 0, "Circle")
+    TNT1 A 0 A_CheckSight("Unsighted")
+    TNT1 A 8 A_SpawnItemEx ("SnowParticle", Random(-Args[0], -Args[0]), Random(-Args[0], -Args[0]), 0, Random(0, 1), Random(0, 1), Random(-1, -3), 0, 128, Args[1])
+    Loop
+  Circle:
+    TNT1 A 0 A_CheckSight("Unsighted")
+    TNT1 A 8 A_SpawnItemEx ("SnowParticle", Random(-Args[0], -Args[0]), 0, 0, Random(0, 1), Random(0, 1), Random(-1, -3), Random(0, 360), 128, Args[1]) 
+    Loop
+  Unsighted:
+    TNT1 A 1
+    Goto Spawn
+ }
+}
+
+Actor SnowSpawnerAlways 14502
+{
+ +NoBlockMap +NoGravity +NoSector +NoInteraction 
+ +NoClip -Solid +CLIENTSIDEONLY +SPAWNCEILING +FORCEXYBILLBOARD
+ Radius 1
+ Height 1
+ States
+ {
+  Spawn:
+    TNT1 A 0
+    TNT1 A 0 A_JumpIf(Args[2] > 0, "Circle")
+    TNT1 A 0 //A_CheckSight("Unsighted")
+    TNT1 A 8 A_SpawnItemEx ("SnowParticle", Random(-Args[0], -Args[0]), Random(-Args[0], -Args[0]), 0, Random(0, 1), Random(0, 1), Random(-1, -3), 0, 128, Args[1])
+    Loop
+  Circle:
+    TNT1 A 0 //A_CheckSight("Unsighted")
+    TNT1 A 8 A_SpawnItemEx ("SnowParticle", Random(-Args[0], -Args[0]), 0, 0, Random(0, 1), Random(0, 1), Random(-1, -3), Random(0, 360), 128, Args[1]) 
+    Loop
+  Unsighted:
+    TNT1 A 1
+    Goto Spawn
+ }
+}
+
+Actor HellTreeScorch1 : HellTree 14503 { 
+  States {
+  Spawn:
+	TNT1 A 0
+	HETR B -1
+	stop
+  }
+}
+
+Actor HellTreeScorch2 : HellTree 14504 { 
+  States {
+  Spawn:
+	TNT1 A 0
+	HETR C -1
+	stop
+  }
+}
+
+//Burned variants
+
+Actor HellTreeBurn1 : HellTree 14505 { 
+  States {
+  Spawn:
+	TNT1 A 0
+	HETR D -1
+	stop
+  }
+}
+
+Actor HellTreeBurn2 : HellTree 14506 { 
+  States {
+  Spawn:
+	TNT1 A 0
+	HETR E -1
+	stop
+  }
+}
+
+//Damaged (and scorched) variant
+
+Actor HellTreeScorch3 : HellTree 14507 { 
+  States {
+  Spawn:
+	TNT1 A 0
+	HETR F -1
+	stop
+  }
+}
+
+Actor HellTreeBurn3 : HellTree 14508 { //Burned down (top) variant
+  Radius 15
+  Height 46
+  States {
+  Spawn:
+	TNT1 A 0
+	HETR G -1
+	stop
+  }
+}
+
+Actor FleshTree1 : HellTree 14509 { //Blood tree, grown using >90% pure human blood!
+  Radius 32
+  Height 89
+  Scale 1
+  States {
+  Spawn:
+	TNT1 A 0
+	HETR H -1
+	stop
+  }
+}
+
+Actor FleshTree2 : FleshTree1 14510 { //Flesh tree, grown on live humans! (Lots of agony was delivered!)
+  States {
+  Spawn:
+	TNT1 A 0
+	HETR I -1
+	stop
+  }
+}
+
+Actor FleshTree3 : FleshTree1 14511 { //Skin tree, grown on dead waste. (Nice for cleaning the mess!)
+  States {
+  Spawn:
+	TNT1 A 0
+	HETR J -1
+	stop
+  }
+}

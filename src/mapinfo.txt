@@ -1,0 +1,18 @@
+//===========================================================================
+//
+// MAPINFO
+//
+//===========================================================================
+
+ClearEpisodes
+
+Episode "test map 01"
+{
+	Name = "My Project"
+}
+
+map MOTSM "Man on the Silver Mountain"
+{
+	Sky1 = "MSKY1"
+	Music = "MOTSM"
+}

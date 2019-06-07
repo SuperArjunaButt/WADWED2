@@ -1,0 +1,17 @@
+//===========================================================================
+//
+// ANIMDEFS
+//
+//===========================================================================
+
+texture icefall1
+    pic icefall1 Tics 8
+	pic icefall2 Tics 8
+	pic icefall3 Tics 8
+	pic icefall4 Tics 8
+	
+texture snowfal1
+	pic snowfal1 Tics 8
+	pic snowfal2 Tics 8
+	pic snowfal3 Tics 8
+	pic snowfal4 Tics 8
