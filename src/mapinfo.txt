@@ -6,13 +6,19 @@
 
 ClearEpisodes
 
-Episode "test map 01"
+Episode "TPL"
 {
-	Name = "My Project"
+	Name = "WAD Wednesday 2nd Anniversary Mapset"
 }
 
-map MOTSM "Man on the Silver Mountain"
+map "TPL" "The Promised Land"
 {
-	Sky1 = "MSKY1"
+	levelnum = 1
+}
+
+map "MOTSM" "Man on the Silver Mountain"
+{
+	Sky1 = "graphics/MSKY1"
 	Music = "MOTSM"
+	levelnum = 2
 }
