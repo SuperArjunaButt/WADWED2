@@ -1,0 +1,4 @@
+:ToiletFlush
+	playuntildone		misc/flush
+	nostopcutoff
+end

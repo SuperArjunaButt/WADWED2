@@ -3,3 +3,7 @@
 // SNDINFO
 //
 //===========================================================================
+$singular	brain/pain
+misc/chat	DSSTFROB
+misc/flush	DSFLUSH
+$singular	misc/flush

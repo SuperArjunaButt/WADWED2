@@ -14,11 +14,25 @@ Episode "TPL"
 map "TPL" "The Promised Land"
 {
 	levelnum = 1
+	
+}
+
+map "LIBRARY" "Library"
+{
+	levelnum = 2
+	Music = "takefive"
+	Sky1 = "SKY1"
+}
+
+map "MEREDITH" "MEREDITH"
+{
+	levelnum = 3
+	Sky1 = "SKY1"
 }
 
 map "MOTSM" "Man on the Silver Mountain"
 {
 	Sky1 = "graphics/MSKY1"
 	Music = "MOTSM"
-	levelnum = 2
+	levelnum = 4
 }
