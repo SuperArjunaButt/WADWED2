@@ -4,6 +4,11 @@
 //
 //===========================================================================
 
+gameinfo {
+	creditpage = "CREDIT1", "CREDIT2"
+	finalepage = "Credits"
+}
+
 ClearEpisodes
 
 Episode "TPL"
@@ -45,4 +50,50 @@ map "MOTSM" "Man on the Silver Mountain"
 	Sky1 = "graphics/MSKY1"
 	Music = "MOTSM"
 	levelnum = 5
+	ExitPic = "SOONECK"
+	Next = EndSequence, "Credits"
+}
+
+
+intermission Credits {
+    
+	// credits 1 --------------
+	Fader{
+		Background = "CREDIT1"
+	    FadeType = FadeIn
+		Time = 2
+	}
+	
+	Image{
+		Background = "CREDIT1"
+		Time = 6
+	}
+	
+	Fader{
+		Background = "CREDIT1"
+		FadeType = FadeOut
+		Time = 2
+	}
+	
+	//credits 2 ------------------
+	
+	Fader{
+		Background = "CREDIT2"
+	    FadeType = FadeIn
+		Time = 2
+	}
+	
+	Image{
+		Background = "CREDIT2"
+		Time = 6
+	}
+	
+	Fader{
+		Background = "CREDIT2"
+		FadeType = FadeOut
+		Time = 4
+	}
+	
+	GotoTitle{}
+	
 }
